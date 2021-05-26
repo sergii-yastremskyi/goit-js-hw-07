@@ -2,6 +2,8 @@ const boxes = document.getElementById('boxes');
 boxes.style.display = 'flex';
 boxes.style.maxWidth = '1280px';
 boxes.style.flexWrap = 'wrap';
+const build = document.querySelector("#controls > button:nth-child(2)");
+const destroy = document.querySelector("#controls > button:nth-child(3)");
 const createBoxes = () => {
     const amount = parseInt(document.querySelector('input').value);
   for (let i = 0; i <= amount-1; i++) {
@@ -20,7 +22,7 @@ const createBoxes = () => {
       console.log(amount);    
     }       
 }
-const build = document.querySelector("#controls > button:nth-child(2)");
+
 
 const removecrate = () => {
    while (boxes.firstChild) {
@@ -31,8 +33,6 @@ const removecrate = () => {
 
 
 build.addEventListener('click', createBoxes);
-
-const destroy = document.querySelector("#controls > button:nth-child(3)");
 destroy.addEventListener('click', removecrate);
 
 
