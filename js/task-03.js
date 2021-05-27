@@ -21,5 +21,7 @@ gallery.style.shrink = '1';
 gallery.style.maxWidth = '800px';
 gallery.style.listStyle = 'none';
 
-images.forEach(image => gallery.insertAdjacentHTML('beforeend', `<li><img  style="max-width:100%; height:auto;" src=${image.url}; alt="${image.alt}"></li>`));
+let galeryHtml = '';
+images.forEach(image => galeryHtml+=`<li><img  style="max-width:100%; height:auto;" src=${image.url}; alt="${image.alt}"></li>`);
+gallery.insertAdjacentHTML('beforeend', galeryHtml);
 gallery.childNodes.forEach(child => child.style.margin = '15px');
